@@ -6,4 +6,4 @@ all:
 
 clean:
 	$(MAKE) -C src clean
-	rm -rf bin obj sample_input.txt
+	rm -rf  sample_input.txt
