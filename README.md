@@ -21,17 +21,15 @@ Answer :  A GitHub Release provides a human-readable release page and lets you a
 
 ### Q1. Compare the Makefile from Part 2 and Part 3. What are the key differences in the variables and rules that enable the creation of a static library?
 
-Answer : 
-	Part2 compiled all .c files directly into one executable. Variables referenced source files and object files only.
+Answer : Part2 compiled all .c files directly into one executable. Variables referenced source files and object files only.
 
-	Part3 adds a LIBDIR and rules to build object files for the library modules, then archives them into lib/libmyutils.a using ar rcs. The final link rule links main.o with the archive (either via full .a path or -L -l flags). New rules: $(STATIC_LIB): $(LIB_OBJS) and a static target. This separates compilation (module → .o), archiving ( .o → .a) and final linking (main + .a → executable)
+Part3 adds a LIBDIR and rules to build object files for the library modules, then archives them into lib/libmyutils.a using ar rcs. The final link rule links main.o with the archive (either via full .a path or -L -l flags). New rules: $(STATIC_LIB): $(LIB_OBJS) and a static target. This separates compilation (module → .o), archiving ( .o → .a) and final linking (main + .a → executable)
 
 ### Q2. What is the purpose of the ar command? Why is ranlib often used immediately after it? 
 
-Answer :
-	 ar creates an archive (.a) — essentially a simple container of object files. ar rcs libmyutils.a obj1.o obj2.o packs the objects.
+Answer :  ar creates an archive (.a) — essentially a simple container of object files. ar rcs libmyutils.a obj1.o obj2.o packs the objects.
 
-	ranlib (or ar s/ar rcs on GNU) creates or updates the symbol index in the archive. The index speeds up the linker’s lookup of symbols when linking against the archive. On some systems ranlib is required; on others ar rcs already does the indexing.
+ranlib (or ar s/ar rcs on GNU) creates or updates the symbol index in the archive. The index speeds up the linker’s lookup of symbols when linking against the archive. On some systems ranlib is required; on others ar rcs already does the indexing.
 
 ### Q3. When you run nm on your client_static executable, are the symbols for functions like mystrlen present? What does this tell you about how static linking works? 
 
