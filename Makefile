@@ -26,7 +26,7 @@ SHARED_LIB := $(LIBDIR)/libmyutils.so
 TARGET_STATIC := $(BINDIR)/client_static
 TARGET_DYNAMIC := $(BINDIR)/client_dynamic
 
-.PHONY: all dirs static shared client_static client_dynamic clean
+.PHONY: all dirs  static shared client_static client_dynamic clean
 
 all: static shared client_static client_dynamic
 
