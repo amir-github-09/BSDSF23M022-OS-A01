@@ -17,10 +17,7 @@ Answer :  A git tag marks a specific commit as a release point. A lightweight (s
 
 Answer :  A GitHub Release provides a human-readable release page and lets you attach compiled assets so users can download binaries (e.g., bin/client) without building from source. It’s how you distribute compiled versions and document what changed in that version.
 
-<<<<<<< HEAD
-=======
 
->>>>>>> dynamic-build
 ## Feature-3 Questions/Answers
 
 ### Q1. Compare the Makefile from Part 2 and Part 3. What are the key differences in the variables and rules that enable the creation of a static library?
@@ -38,10 +35,7 @@ ranlib (or ar s/ar rcs on GNU) creates or updates the symbol index in the archiv
 ### Q3. When you run nm on your client_static executable, are the symbols for functions like mystrlen present? What does this tell you about how static linking works? 
 
 Answer : nm on lib/libmyutils.a shows the functions defined in the library (e.g., mystrlen). After linking statically, nm bin/client_static will show the definitions for the functions your program used — because the linker copied the required object code from the archive into the final executable. This demonstrates that static linking embeds library code into the executable (resulting in a larger binary and making the executable independent of external .so files at runtime).
-<<<<<<< HEAD
-=======
 
->>>>>>> dynamic-build
 
 ## Feature-4 Questions/Answers
 
